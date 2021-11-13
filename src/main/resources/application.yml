@@ -1,0 +1,25 @@
+server:
+  port: 8080
+spring:
+  profiles:
+    active: local
+  datasource:
+    hikari:
+      auto-commit: true
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        id:
+          new_generator_mappings: false
+        format_sql: true
+        jdbc.time_zone: Asia/Kolkata
+        naming:
+          physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+          implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    database: MYSQL
+    show-sql: true
